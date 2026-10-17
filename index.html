@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кафе «На Берегу» — Павлово</title>
+<meta name="description" content="Кафе «На Берегу», Павлово. Бизнес-ланчи, банкеты и доставка. В центре города на набережной, ежедневно с 10:00.">
+<meta name="theme-color" content="#F7F3EC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sand:#F7F3EC;--paper:#FFFFFF;--deep:#0E4F55;--lagoon:#1C8C8C;--coral:#E4572E;--sun:#EFB03C;
+  --line:#DED5C6;--muted:#6E6A61;
+  --disp:Unbounded,system-ui,sans-serif;--sans:Manrope,system-ui,sans-serif;
+  --ease:cubic-bezier(0.23,1,0.32,1);--t:.26s;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--sand);color:var(--deep);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{margin:0;font-family:var(--disp);font-weight:400;letter-spacing:-.02em;line-height:1.12}
+p{margin:0}button{font:inherit;cursor:pointer}a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding-left:26px;padding-right:26px}
+.lab{font:600 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--lagoon)}
+
+.hdr{position:sticky;top:0;z-index:50;background:rgba(247,243,236,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hdr__in{display:flex;align-items:center;gap:18px;height:74px}
+.logo{font-family:var(--disp);font-weight:600;font-size:21px;letter-spacing:.05em}
+.logo span{color:var(--lagoon)}
+.hdr .meta{font-size:14px;color:var(--muted)}
+.hdr .tel{margin-left:auto;font-weight:700;font-size:16px;white-space:nowrap}
+
+.hero{padding:58px 0 38px}
+.hero h1{font-size:clamp(32px,4.8vw,58px);max-width:17ch}
+.hero h1 em{font-style:normal;color:var(--lagoon)}
+.hero p.sub{margin-top:20px;max-width:54ch;font-size:18px;color:var(--muted)}
+.facts{display:flex;gap:30px;margin-top:28px;flex-wrap:wrap}
+.facts b{display:block;font-family:var(--disp);font-size:24px;font-weight:400;line-height:1.1}
+.facts span{font-size:13px;color:var(--muted)}
+
+.arch{margin-top:26px;background:var(--paper);border:1px solid var(--line);border-radius:170px 170px 28px 28px;padding:50px 38px 34px;position:relative}
+.arch .lab{display:block;text-align:center}
+.arch h2{font-size:clamp(23px,2.9vw,32px);text-align:center;margin-top:10px}
+.arch__list{margin-top:24px;border-top:1px solid var(--line)}
+.arch__list div{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:16px}
+.arch__list span{color:var(--muted)}
+.arch__list b{white-space:nowrap}
+
+section{padding:48px 0}
+.head h2{font-size:clamp(26px,3.4vw,40px)}
+.head h2 em{font-style:normal;color:var(--lagoon)}
+.head p{margin-top:13px;color:var(--muted);max-width:60ch}
+
+.serv{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:28px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:26px;display:flex;flex-direction:column;transition:border-color var(--t) var(--ease),transform var(--t) var(--ease)}
+.card .ic{width:46px;height:46px;border-radius:50%;background:rgba(28,140,140,.1);display:grid;place-items:center;font-size:21px}
+.card h3{font-size:21px;margin-top:16px}
+.card p{margin-top:10px;font-size:15px;color:var(--muted);flex:1}
+.card .pr{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-family:var(--disp);font-size:22px}
+.card .pr small{display:block;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--muted);margin-top:4px}
+.card.on{border-color:var(--lagoon)}
+.btn{width:100%;margin-top:14px;border:none;border-radius:999px;background:var(--deep);color:var(--sand);padding:13px;font-weight:700;font-size:14px;transition:filter var(--t) var(--ease)}
+.btn.coral{background:var(--coral);color:#fff}
+.btn.light{background:var(--paper);color:var(--deep);border:1px solid var(--line)}
+
+.day{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.slot{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:24px}
+.slot b{font-family:var(--disp);font-size:26px;font-weight:400;display:block;line-height:1}
+.slot .lab{display:block;margin-top:10px}
+.slot p{margin-top:10px;font-size:15px;color:var(--muted)}
+
+.note{border:1px dashed rgba(28,140,140,.45);border-radius:24px;padding:18px 22px;margin-top:24px;font-size:15px;line-height:1.65;color:var(--muted);background:rgba(28,140,140,.05)}
+.note b{color:var(--lagoon)}
+
+footer{background:var(--deep);color:rgba(247,243,236,.72);padding:46px 0 32px;font-size:15px;line-height:1.75}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:26px}
+.fgrid .logo{color:var(--sand);display:block;margin-bottom:11px}
+.fgrid .lab{display:block;margin-bottom:11px;color:rgba(247,243,236,.55)}
+.fgrid a{color:var(--sand)}
+.sign{margin-top:32px;padding-top:18px;border-top:1px solid rgba(247,243,236,.2);font-size:13px;color:rgba(247,243,236,.45);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.sign a{color:var(--sun)}
+
+dialog{border:none;border-radius:28px;padding:0;background:var(--sand);color:var(--deep);width:min(450px,calc(100vw - 32px))}
+dialog::backdrop{background:rgba(14,79,85,.45)}
+dialog[open]{animation:in var(--t) var(--ease)}
+@keyframes in{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+.sheet{padding:28px}
+.sheet h3{font-size:23px}
+.ord{margin-top:18px;border-top:1px solid var(--line)}
+.ord div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.ord span{color:var(--muted);min-width:0}
+label{display:block;margin-top:14px}
+label span{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:6px}
+input,select{width:100%;border:1px solid var(--line);border-radius:999px;background:var(--paper);padding:12px 18px;font:400 16px var(--sans);color:var(--deep);transition:border-color var(--t) var(--ease)}
+input:focus,select:focus{outline:none;border-color:var(--lagoon)}
+
+@media (hover:hover) and (pointer:fine){
+  .card:hover{border-color:var(--lagoon)}
+  .btn:hover{filter:brightness(1.08)}
+}
+@media (max-width:860px){
+  .day,.fgrid{grid-template-columns:1fr}
+  .arch{border-radius:110px 110px 28px 28px;padding:38px 22px 28px}
+  .hdr .meta{display:none}
+}
+@media (max-width:560px){
+  .wrap{padding-left:18px;padding-right:18px}body{font-size:16px}
+  section{padding:38px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01ms!important}dialog[open]{animation:none}}
+</style>
+</head>
+<body>
+
+<header class="hdr"><div class="wrap hdr__in">
+  <span class="logo">НА <span>БЕРЕГУ</span></span>
+  <span class="meta">Павлово · набережная, центр города</span>
+  <a class="tel" href="https://vk.ru/naberegupavlovo">Написать</a>
+</div></header>
+
+<div class="wrap hero">
+  <h1>Кафе на набережной, <em>которое можно найти</em></h1>
+  <p class="sub">Бизнес-ланчи, банкеты и доставка. Ежедневно с десяти утра, в центре города у реки. Всё, что обычно спрашивают в сообщениях - собрано здесь.</p>
+  <div class="facts">
+    <div><b>с 10:00</b><span>ежедневно</span></div>
+    <div><b>до 300 ₽</b><span>поминальный обед</span></div>
+    <div><b>центр</b><span>на набережной</span></div>
+  </div>
+
+  <div class="arch">
+    <span class="lab">Что у вас есть</span>
+    <h2>Четыре повода зайти</h2>
+    <div class="arch__list">
+      <div><span>Бизнес-ланч</span><b>будни, днём</b></div>
+      <div><span>Банкеты</span><b>по заявке</b></div>
+      <div><span>Поминальный обед</span><b>до 300 ₽</b></div>
+      <div><span>Доставка еды</span><b>по договорённости</b></div>
+    </div>
+  </div>
+</div>
+
+<section class="wrap" id="serv">
+  <div class="head">
+    <h2>Услуги <em>и цены</em></h2>
+    <p>Эти четыре строки сейчас лежат в разделе услуг ВКонтакте. Там их находит только тот, кто уже зашёл в сообщество и пролистал вниз.</p>
+  </div>
+  <div class="serv" id="cards"></div>
+  <div class="note">
+    <b>Что здесь настоящее.</b> Все четыре услуги и цена поминального обеда - ваши, из сообщества. Остальные суммы помечены как «по договорённости», потому что в открытом доступе их нет. Пришлёте прайс - подставлю.
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="head">
+    <h2>День <em>в кафе</em></h2>
+    <p>Вы работаете с десяти утра. Разным людям нужно разное время - пусть это будет видно сразу.</p>
+  </div>
+  <div class="day">
+    <div class="slot">
+      <b>10:00</b>
+      <span class="lab">Утро</span>
+      <p>Кофе и завтрак у воды. Самое тихое время, когда в центре ещё свободно.</p>
+    </div>
+    <div class="slot">
+      <b>12:00</b>
+      <span class="lab">Бизнес-ланч</span>
+      <p>Обед для тех, кто работает в центре. Главный повод прийти в будний день.</p>
+    </div>
+    <div class="slot">
+      <b>18:00</b>
+      <span class="lab">Вечер и банкеты</span>
+      <p>Встречи, дни рождения, поминальные обеды. Зал бронируется заранее.</p>
+    </div>
+  </div>
+  <div class="note">
+    Точное время бизнес-ланча и часы закрытия в сообществе не указаны - поставлю ваши, как скажете.
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="head">
+    <h2>Наблюдение <em>по вашей странице</em></h2>
+  </div>
+  <div class="note" style="margin-top:20px;border-style:solid;border-color:var(--line);background:var(--paper);color:var(--deep)">
+    <p style="color:var(--muted)">В карточке сообщества нет ни одной ссылки наружу - ни сайта, ни карты, ни меню. Человек, который ищет «где пообедать в Павлово» или «кафе на набережной», находит вас только если уже знает название. А тот, кому нужен зал для поминального обеда, обычно ищет срочно и через поиск, а не листая ВКонтакте.</p>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div>
+      <span class="logo">На Берегу</span>
+      Кафе, бизнес-ланчи, банкеты<br>Павлово, центр, набережная
+    </div>
+    <div>
+      <span class="lab">Связь</span>
+      <a href="https://vk.ru/naberegupavlovo">Сообщество ВКонтакте</a>
+    </div>
+    <div>
+      <span class="lab">Время</span>
+      Ежедневно с 10:00
+    </div>
+  </div>
+  <div class="sign">
+    <span>Черновой пример страницы. Собрал Арсений Асянов, «Digital для бизнеса»</span>
+    <a href="https://strangehul1-design.github.io/web-chef-portfolio/ru/">портфолио</a>
+  </div>
+</div></footer>
+
+<dialog id="dlg">
+  <div class="sheet" id="s1">
+    <h3 id="dT">Заявка</h3>
+    <div class="ord" id="ord"></div>
+    <label><span>Дата</span><input id="fd" type="date"></label>
+    <label><span>Сколько человек</span><input id="fg" type="text" inputmode="numeric" placeholder="6"></label>
+    <label><span>Телефон</span><input id="fp" type="tel" placeholder="+7"></label>
+    <button class="btn coral" id="send">Отправить</button>
+    <button class="btn light" onclick="document.querySelector('#dlg').close()">Закрыть</button>
+  </div>
+  <div class="sheet" id="s2" hidden>
+    <span class="lab" style="color:var(--coral)">Заявка принята</span>
+    <h3 style="margin-top:8px">Перезвоним</h3>
+    <div class="ord" id="okR"></div>
+    <button class="btn light" onclick="document.querySelector('#dlg').close()">Хорошо</button>
+  </div>
+</dialog>
+
+<script>
+/* FORM_CONFIG - в рабочей версии заявка уходит в Telegram. В демо форма ничего не отправляет. */
+const FORM_CONFIG = { mode:"demo", telegram_token:"", chat_id:"" };
+
+/* Услуги и цена поминального обеда - настоящие, из раздела услуг сообщества. */
+const SERV = [
+  { em:"🍲", n:"Бизнес-ланч", p:"— ₽", u:"цену подставим вашу", d:"Обед в будни для тех, кто работает в центре. Самый частый повод зайти днём." },
+  { em:"🎉", n:"Банкеты", p:"по договорённости", u:"зал бронируется заранее", d:"Дни рождения, встречи и корпоративы. Меню согласуем под компанию." },
+  { em:"🕯️", n:"Поминальный обед", p:"до 300 ₽", u:"с человека", d:"Тихий формат с понятной ценой. Её стоит показывать сразу - в такой момент не до переписки." },
+  { em:"🛵", n:"Доставка еды", p:"по договорённости", u:"условия уточним", d:"Доставка по городу. Условия и зону стоит написать на странице, чтобы не отвечать на это каждый раз." }
+];
+
+const $ = s => document.querySelector(s);
+
+$("#cards").innerHTML = SERV.map((s,i) => `
+  <article class="card">
+    <div class="ic">${s.em}</div>
+    <h3>${s.n}</h3>
+    <p>${s.d}</p>
+    <div class="pr">${s.p}<small>${s.u}</small></div>
+    <button class="btn" data-i="${i}">Оставить заявку</button>
+  </article>`).join("");
+
+$("#cards").addEventListener("click", e => {
+  const b = e.target.closest("button[data-i]"); if(!b) return;
+  const s = SERV[+b.dataset.i];
+  $("#dT").textContent = s.n;
+  $("#ord").innerHTML = `<div><span>${s.n}</span><b>${s.p}</b></div>`;
+  $("#s1").hidden = false; $("#s2").hidden = true;
+  $("#dlg").showModal();
+});
+
+$("#send").addEventListener("click", () => {
+  $("#okR").innerHTML = `
+    <div><span>Повод</span><b>${$("#dT").textContent}</b></div>
+    <div><span>Дата</span><b>${$("#fd").value || "уточним"}</b></div>
+    <div><span>Человек</span><b>${$("#fg").value.trim() || "уточним"}</b></div>
+    <div><span>Телефон</span><b>${$("#fp").value.trim() || "не указан"}</b></div>
+    <div><span>Статус</span><b>демо, не отправлено</b></div>`;
+  $("#s1").hidden = true; $("#s2").hidden = false;
+});
+</script>
+</body>
+</html>
